@@ -72,5 +72,10 @@ group :test do
 end
 
 
+#These gems are added to silence warnings!
 gem "mutex_m"
 gem "bigdecimal"
+gem "benchmark"
+gem "devise", "~> 4.9"
+
+gem "tailwindcss-rails", "~> 3.1"

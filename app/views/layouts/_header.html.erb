@@ -1,0 +1,28 @@
+<header class="sticky top-0 bg-gradient-to-r from-primary-600 to-primary-500 px-12 py-4 text-neutral-100 flex items-center justify-between shadow-xl">
+    <%= link_to root_path do %>
+        <div class="flex items-center space-x-4">
+            <div class="size-16 rounded-full bg-primary-300 flex items-center justify-center">
+                <h1 class="text-4xl font-extrabold text-primary-200">R</h1>
+            </div>
+            <h1 class="text-4xl font-bold font-stylish">RUSHAN</h1>
+        </div>
+    <% end %>
+    <% if !user_signed_in? %>
+        <div class="flex space-x-4">
+            <%= link_to new_user_session_path, method: :get, class: "btn-primary" do %>
+                Sign In
+            <% end %>
+            <%= link_to new_user_registration_path, method: :get, class: "btn-secondary" do %>
+                Sign Up
+            <% end %>
+        </div>
+    <% else %>
+        <div class="flex items-center space-x-4">
+            <%= link_to edit_user_registration_path do %>
+                <div class="rounded-full bg-primary-300 text-primary-700 text-2xl font-semibold size-12 flex items-center justify-center">
+                    <%= current_user.email[0].upcase %>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
+</header>

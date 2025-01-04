@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stylish&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-poppins bg-neutral-300;
+}
+
+.btn-primary {
+  @apply rounded-lg px-4 py-2 text-neutral-50 bg-primary-800 flex items-center justify-center font-semibold cursor-pointer hover:bg-primary-700 hover:text-neutral-200 active:scale-90 shadow-xl duration-300;
+}
+
+.btn-secondary {
+  @apply rounded-lg px-4 py-2 text-neutral-900 bg-neutral-300 flex items-center justify-center font-semibold cursor-pointer hover:bg-neutral-400 hover:text-neutral-800 shadow-xl active:scale-90 duration-300;
+}
+
+.btn-danger {
+  @apply rounded-lg px-4 py-2 text-neutral-50 bg-red-600 flex items-center justify-center font-semibold cursor-pointer hover:bg-red-500 hover:text-neutral-200 shadow-red-700 active:scale-90 shadow-lg duration-300;
+}

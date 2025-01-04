@@ -1,0 +1,35 @@
+<div class="bg-neutral-50 self-center m-12 p-8 min-w-[500px] rounded-xl flex flex-col gap-4 justify-center shadow-xl">
+    <div class="flex flex-col gap-1 text-center">
+        <h2 class="text-primary-700 font-bold text-3xl">Lets get started!</h2>
+        <p class="text-primary-600">Register to get started.</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "flex flex-col gap-4"}) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field flex flex-col gap-1">
+          <%= f.label :email, class: "font-semibold text-primary-700"%><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "someone@gmail.com", class: "px-4 py-2 rounded-md outline-none border-[2px] border-neutral-900 focus:border-primary-700 duration-300" %>
+      </div>
+
+      <div class="field flex flex-col gap-1">
+          <%= f.label :password, class: "font-semibold text-primary-700" %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter a password", class: "px-4 py-2 rounded-md outline-none border-[2px] border-neutral-900 focus:border-primary-700 duration-300" %>
+      </div>
+
+      <div class="field flex flex-col gap-1">
+          <%= f.label :password_confirmation, class: "font-semibold text-primary-700"%><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password", class: "px-4 py-2 rounded-md outline-none border-[2px] border-neutral-900 focus:border-primary-700 duration-300" %>
+      </div>
+
+      <%= f.submit "Sign up", class: "btn-primary self-center"%>
+    <% end %>
+    <div class="w-full h-[1px] bg-neutral-300 my-4"></div>
+    <div class="flex flex-col gap-4 items-center">
+      <p class="text-primary-600 self-center">Already have an account?</p>
+      <%= link_to "Sign in", new_user_session_path, method: :get, class: "btn-secondary bg-red-500" %>
+    </div>
+</div>
