@@ -9,13 +9,13 @@
     <% end %>
     <% if !user_signed_in? %>
         <div class="flex space-x-4">
-            <%= link_to new_user_session_path, method: :get, class: "btn-primary" do %>
+            <%= link_to new_user_session_path, class: "btn-primary" do %>
                 Sign In
             <% end %>
-            <%= link_to new_user_registration_path, method: :get, class: "btn-secondary" do %>
+            <%= link_to new_user_registration_path, class: "btn-secondary" do %>
                 Sign Up
             <% end %>
-        </div>
+        </div>  
     <% else %>
         <div class="flex items-center space-x-4">
             <%= link_to edit_user_registration_path do %>
